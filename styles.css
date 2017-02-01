@@ -1,0 +1,32 @@
+#cookie-container{
+	border: 4px solid #f7c413;
+	width: 250px;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+}
+#cookie-container p{
+	font-size: 13px;
+	color: inherit;
+}
+#disclaimer-text{
+	color:inherit;
+	padding: 0 15px;
+}
+#agree-close{
+	display: block;
+	padding: 10px;
+	margin: 15px;
+	width: 211px;
+	font-size: 13px;
+	font-weight: normal;
+	text-align: center;
+	background:#f7c413;
+}
+#x-close{
+	display: block;
+	text-align: right;
+	padding: 5px 10px;
+	
+	
+}
