@@ -1,6 +1,6 @@
 #cookie-container{
 
-	z-index: 1;
+	z-index: 999;
 	display: none;
 	border: 4px solid #f7c413;
 	width: 250px;
@@ -11,12 +11,12 @@
 #mobile-text{
 	display: none;
 }
-#cookie-container p{
+
+#disclaimer-text{
+	font-family: inherit;
 	font-size: inherit;
 	color: inherit;
 	text-align: left;
-}
-#disclaimer-text{
 	color:inherit;
 	padding: 0 15px;
 }
@@ -44,5 +44,8 @@
 	}
 	#mobile-text{
 		display: block;
+	}
+	#cookie-container{
+		width: 100%;
 	}
 }

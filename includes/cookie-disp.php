@@ -9,7 +9,7 @@
 				<p id="desktop-text"><?php echo get_option('cookie_disclaimer_desktop'); ?><p>
 				<p id="mobile-text"><?php echo get_option('cookie_disclaimer_mobile'); ?><p>
 			</div>
-			<button id="agree-close">Accept and Close</button>
+			<button id="agree-close" title="Accept Privacy agreement">Accept and Close</button>
 		</div>
 		
 	<?
