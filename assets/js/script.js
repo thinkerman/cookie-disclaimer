@@ -2,7 +2,7 @@ jQuery(document).ready(function($){
 	console.log('What are you looking for here?')
 	
 	//if user already agreed to the cookie do not show disclaimer
-	if($.cookie('user-choice') == 'User Agreed'){
+	if($.cookie('user-choice') == 'User Agreeds'){
 		$('#cookie-container').remove();
 	}else {
 		$('#cookie-container').delay(2500).fadeIn('slow');
