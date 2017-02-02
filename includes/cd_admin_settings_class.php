@@ -1,5 +1,5 @@
 <?php
-	
+	if ( ! defined( 'ABSPATH' ) ) exit;
 	function cookie_disclaimer() {
 		add_menu_page( 
 			'Cookie Disclaimer', 

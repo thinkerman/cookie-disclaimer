@@ -3,8 +3,6 @@ jQuery(document).ready(function($){
 	
 	
 	if($.cookie('user-choice') == 'User Agreed'){
-
-		//set cookie
 		console.log($.cookie('user-choice'))
 	}else {
 		$('#cookie-container').delay(2500).fadeIn('slow');
@@ -14,10 +12,9 @@ jQuery(document).ready(function($){
 		'target': 'blank'
 	});
 
+
 	$('#x-close').click(function() {
 		$('#cookie-container').fadeOut('slow');
-
-		//set cookie
 		$.cookie('user-choice','User Agreed',{path:'/'})
 	})
 	$('#agree-close').click(function() {
@@ -25,6 +22,11 @@ jQuery(document).ready(function($){
 		$.cookie('user-choice','User Agreed',{path:'/'})
 	})
 
+	function get_positions(){
+		var offset = $( this ).offset()
+		
+	}
 
+get_positions();
 
 })
