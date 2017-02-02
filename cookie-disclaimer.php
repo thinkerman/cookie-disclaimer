@@ -59,5 +59,12 @@ function check_current_page(){
 }
 add_action( 'wp_footer', 'check_current_page');
 
-
+function admin_trello_notice(){
+    ?>
+     <div class="notice notice-success is-dismissible">
+        <p><?php _e( "Curious about my workflow habit? check out <a href='https://trello.com/b/GMv1oKPn/disclaimer-plugin' target='_blank'>the Trello card for this project</>" ); ?></p>
+    </div>
+    <?
+}
+add_action('admin_notices','admin_trello_notice')
 ?>
