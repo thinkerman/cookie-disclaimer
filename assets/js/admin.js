@@ -1,4 +1,5 @@
 jQuery(document).ready(function($){
+'use stict';
 $('#cookie-options').tab();
 
 var select = $('.selectpicker');

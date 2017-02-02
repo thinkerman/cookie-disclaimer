@@ -1,4 +1,5 @@
 jQuery(document).ready(function($){
+	'use strict';
 	console.log('What are you looking for here?')
 	
 	//if user already agreed to the cookie do not show disclaimer
