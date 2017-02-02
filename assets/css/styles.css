@@ -54,6 +54,6 @@
 		display: block;
 	}
 	#cookie-container{
-		min-width: 98%;
+		width: auto;
 	}
 }
