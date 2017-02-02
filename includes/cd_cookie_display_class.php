@@ -1,7 +1,8 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit;
+
+	add_action('wp_footer','disp_cookie', 100 );
 	function disp_cookie(){
-	
 	?>
 		<div id="cookie-container">
 			<a id="x-close"><i class="fa fa-times" aria-hidden="true"></i></a>
@@ -15,8 +16,7 @@
 		</div>
 		
 	<?
-
 	}
-	add_action('wp_footer','disp_cookie', 100 );
+	
 ?>
 

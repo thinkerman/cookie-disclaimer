@@ -11,14 +11,19 @@ Author URI: http://devcodes.xyz
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 function enqueue_plugin_scripts() {
+
+	
     wp_register_style( 'styles',  plugin_dir_url( __FILE__ ) . 'assets/css/styles.css' );
     wp_enqueue_style( 'styles', plugin_dir_url( __FILE__ ) . 'assets/css/styles.css', ' ', time() );
+
     wp_register_style( 'font-awesome', plugin_dir_url( __FILE__ ) . 'assets/css/font-awesome/css/font-awesome.min.css');
     wp_enqueue_style( 'font-awesome', plugin_dir_url( __FILE__ ) . 'assets/css/font-awesome/css/font-awesome.min.css', ' ', time() );
+
     wp_enqueue_script( 'cookie-script', plugin_dir_url( __FILE__ ) . 'assets/js/script.js',array('jquery') );
     wp_enqueue_script( 'jq-cookie-plugin', plugin_dir_url( __FILE__ ) . 'assets/js/jquery.cookie.js',array('jquery') );
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_plugin_scripts' );
+
 	$admin_dir = plugin_dir_path( __FILE__ ).'includes/cd_admin_settings_class.php';
 	include_once $admin_dir;
 
