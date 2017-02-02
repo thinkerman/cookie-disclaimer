@@ -12,7 +12,7 @@
 			'cookie_disclaimer', 
 			'cookie_disclaimer_option', 
 			'dashicons-admin-site',
-			50
+			51
 
 			);
 	}
