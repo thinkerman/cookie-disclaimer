@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Cookie Notifier
+Plugin Name:Simple Cookie Disclaimer
 Plugin URI: https:git@gitlab.com:thinkerman/CookieNotifierPlugin.git
 Description: Notifies user that the current website uses cookies to store information
 Version: 0.1.0
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 function enqueue_plugin_scripts() {
 
-	
+
     wp_register_style( 'styles',  plugin_dir_url( __FILE__ ) . 'assets/css/styles.css' );
     wp_enqueue_style( 'styles', plugin_dir_url( __FILE__ ) . 'assets/css/styles.css', ' ', time() );
 
