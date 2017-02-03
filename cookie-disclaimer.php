@@ -7,6 +7,7 @@ Version: 0.1.0
 Author: Samuel Adegoke
 Author URI: http://devcodes.xyz
 */
+
 if (!defined('ABSPATH'))
     exit;
 function enqueue_plugin_scripts()
@@ -61,7 +62,7 @@ function admin_trello_notice()
 ?>
     <div class="notice notice-success is-dismissible">
         <p><?php
-    _e("Curious about my workflow habit? check out <a href='https://trello.com/b/GMv1oKPn/disclaimer-plugin' target='_blank'>the Trello card for this project</>");
+    _e("Curious about my workflow habit? check out <a href='https://trello.com/b/GMv1oKPn/disclaimer-plugin' target='_blank'>the Trello card for this project</a>");
 ?></p>
     </div>
     <?
