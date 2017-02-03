@@ -1,36 +1,40 @@
 jQuery(document).ready(function($){
 	'use strict';
-	console.log('What are you looking for here?')
+	var _container = $('#cookie-container');
+	var _disclaimerLink = $('#disclaimer-text>p>a');
+	var _agreeButton = $('#agree-close');
+	var _xButton = $('#x-close');
+	console.log('What are you looking for here?');
 	
 	//if user already agreed to the cookie do not show disclaimer
 	if($.cookie('user-choice') == 'User Agreed'){
-		$('#cookie-container').remove();
+		_container.remove();
 	}else {
-		$('#cookie-container').delay(2500).fadeIn('slow');
+		_container.delay(2500).fadeIn('slow');
 	}
 
 	//add target attr to links in disclaimer text
-	$('#disclaimer-text>p>a').attr({
+	 _disclaimerLink.attr({
 		'target': 'blank'
 	});
 
 	//save cookie when user closes the disclaimer
-	$('#x-close').click(function() {
-		$('#cookie-container').fadeOut('slow');
+	_xButton.click(function() {
+		_container.fadeOut('slow');
 		$.cookie('user-choice','User Agreed',{path:'/'})
 	})
 
 	//save cookie when user agrees
-	$('#agree-close').click(function() {
-		$('#cookie-container').fadeOut('slow');
+	_agreeButton.click(function() {
+		_container.fadeOut('slow');
 		$.cookie('user-choice','User Agreed',{path:'/'})
 	})
 
 
 	//if ellipses is in button, change tooltip to full text in the button
-	$('#agree-close').mouseover(function() {
+	_agreeButton.mouseover(function() {
 		if ($('#agree-close:contains(...)')) {
-		$('#agree-close').attr('title',$('#agree-close').text());
+		_agreeButton.attr('title',_agreeButton.text());
 	}
 	});
 
