@@ -1,11 +1,30 @@
 <?php
-	if ( ! defined( 'ABSPATH' ) ) exit;
-	add_action( 'admin_menu', 'cookie_disclaimer' ); 
-	function cookie_disclaimer() {
+
+/**
+* 
+*/
+require_once '../cookie-disclaimer.php';
+class adminSettings extends cookieDisclaimer
+{
+	
+	function __construct()
+	{
+		if ( ! defined( 'ABSPATH' ) ) exit;
+		parent::__construct();
+		$desktop = get_option('cookie_disclaimer_desktop');
+		$mobile = get_option('cookie_disclaimer_mobile');
+		$country = get_option('cookie_disclaimer_country');
+
+
+	}
+
+
+	
+	public function cookie_disclaimer() {
 	add_menu_page( 
 			'Cookie Disclaimer', 
 			'Cookie Disclaimer', 
-			'manage_options', 
+			'read', 
 			'cookie_disclaimer', 
 			'cookie_disclaimer_option', 
 			'dashicons-admin-site',
@@ -13,15 +32,15 @@
 			);
 	}
 	
-	add_action( 'admin_init', 'add_disclaimer_setting' );
-	function add_disclaimer_setting(){
+
+	public function add_disclaimer_setting(){
 		register_setting( 'cookie_disclaimer', 'cookie_disclaimer_desktop');
 		register_setting( 'cookie_disclaimer', 'cookie_disclaimer_mobile');
 		register_setting( 'cookie_disclaimer', 'cookie_disclaimer_country');
 	}
 	
-	function cookie_disclaimer_option() {
-		if ( current_user_can( 'read' ) )  {
+	public function cookie_disclaimer_option() {
+		if ( current_user_can( 'manage_options' ) )  {
 			wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
 		}
 		echo '<div class="wrap">';
@@ -30,9 +49,6 @@
 		<form method="post" action ="options.php">
 
 			<?php 
-				$desktop = get_option('cookie_disclaimer_desktop');
-				$mobile = get_option('cookie_disclaimer_mobile');
-				$country = get_option('cookie_disclaimer_country');
 				settings_fields( 'cookie_disclaimer' );
 				do_settings_sections( 'cookie_disclaimer' );
 			?>
@@ -49,10 +65,10 @@
 				<br>
 				<br>
 				<div id="desktop" class="tab-pane fade in active">
-					<textarea class="settings" style="width: 60%;height:350px;" maxlength="300" name="cookie_disclaimer_desktop"><?php echo $desktop ?></textarea>
+					<textarea class="settings" style="width: 60%;height:350px;" maxlength="300" name="cookie_disclaimer_desktop"><?php echo $this->desktop ?></textarea>
 				</div>
 				<div id="mobile" class="tab-pane fade">
-					<textarea class="settings" style="width: 60%;height:350px;" maxlength="300" name="cookie_disclaimer_mobile"><?php echo $mobile ?></textarea>
+					<textarea class="settings" style="width: 60%;height:350px;" maxlength="300" name="cookie_disclaimer_mobile"><?php echo $this->mobile ?></textarea>
 				</div>
 			<div id="country" class="tab-pane fade">
 					<label>Select country and write the Disclaimer for that country </label>
@@ -340,4 +356,6 @@
 		<?
 		echo '</div>';
 	}
+
+}
 ?>
