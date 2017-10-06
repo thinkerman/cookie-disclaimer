@@ -5,7 +5,7 @@ Plugin URI: https:git@gitlab.com:thinkerman/CookieNotifierPlugin.git
 Description: Notifies user that the current website uses cookies to store information
 Version: 0.1.0
 Author: Samuel Adegoke
-Author URI: http://devcodes.xyz
+Author URI: http://devcodes.xyxx
 */
 
 if (!defined('ABSPATH'))
